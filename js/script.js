@@ -3,6 +3,7 @@ let countries = ["美國", "加拿大", "百慕達", "波多黎各", "澳洲", "
 let count = 0;
 let db;
 let words;
+//commit
 
 
 
