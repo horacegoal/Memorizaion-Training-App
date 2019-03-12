@@ -3,9 +3,6 @@ let countries = ["美國", "加拿大", "百慕達", "波多黎各", "澳洲", "
 let count = 0;
 let db;
 let words;
-//commit
-
-
 
 function setup() {
   noCanvas();
@@ -201,9 +198,14 @@ function addWord(){
     category: category,
     name: name
   }
+  let deliveryMessage = select('#delivery_message');
 
+  if(words[category][name]){
+    return deliveryMessage.html('該詞語已存在')
+  }
+  deliveryMessage.html('傳送中');
   httpPost('https://memorization-app-data-api.herokuapp.com/add', data, function(res){
-    console.log(res);
+    deliveryMessage.html('傳送成功！');
   }, function(err){
     console.log(err)
   });
