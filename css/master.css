@@ -1,0 +1,237 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.memory_palace{
+  display: inline-block;
+  width: 110px;
+  height: 500px;
+  color: white;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: scroll;
+  font-size: 14px;
+  /* border: 1px solid green; */
+}
+
+.memory_palace_input{
+  text-align: right;
+  font-size: 18px;
+  width: 100px;
+  height: 390px;
+  overflow: scroll;
+  padding: 3px;
+  box-sizing: border-box;
+  /* background-color: yellow; */
+}
+
+#add{
+  width: 50px;
+  height: 20px;
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid black; */
+}
+input[type="text"]{
+  width: 60px;
+  height: 16px;
+  margin-right: 3px;
+}
+
+
+.container{
+  position: absolute;
+  width: 720px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid red; */
+}
+.words_and_answers{
+
+}
+
+.random_word{
+  width :100px;
+  height :400px;
+  overflow: scroll;
+  background-color: lightcoral;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+.random_word p{
+  margin-top: 3px;
+}
+
+
+#answer_box{
+  position: relative;
+  width: 400px;
+  height: 400px;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: inherit;
+  background-color: gainsboro;
+}
+textarea {
+   resize: none;
+}
+
+#username{
+  width: 105px;
+  height: 30px;
+}
+
+.record{
+  width: 110px;
+  height: 500px;
+  float: right;
+  color: white;
+  text-align: center;
+
+}
+
+.timer_title{
+  padding-top: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.timer{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.accuracy{
+  text-align: center;
+  color: white;
+}
+
+#particles-js{
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+
+
+
+#random_button{
+  height: 50px;
+  width: 170px;
+  background: #00072F;
+  text-align: center;
+  line-height: 40px;
+  color: #555;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 6px;
+  transition: 5px;
+  overflow: hidden;
+  /* z-index: 1; */
+  border: none;
+  outline: inherit;
+  border-radius: 25px 0 0 0;
+  /* transform: translateX(10px); */
+}
+#random_button:hover{
+  color: #fff;
+  box-shadow: -15px 0 50px rgba(255, 20, 152, 1), 15px 0 50px rgba(122, 20, 255, 1) ;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.5),
+  0 0 35px rgba(255, 255, 255, 0.5);
+  /* z-index: 3; */
+}
+
+#hide_button{
+  height: 50px;
+  width: 215px;
+  background: #00072F;
+  text-align: center;
+  line-height: 40px;
+  color: #555;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 6px;
+  transition: 5px;
+  overflow: hidden;
+  border: none;
+  outline: inherit;
+  border-radius: 0 25px 0 0;
+  /* transform: translateY(3px); */
+}
+#hide_button:hover{
+  color: #fff;
+  box-shadow: -15px 0 50px rgba(255, 20, 152, 1), 15px 0 50px rgba(122, 20, 255, 1) ;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.5),
+  0 0 35px rgba(255, 255, 255, 0.5);
+  /* z-index: -3; */
+}
+
+#submit_button{
+  height: 50px;
+  width: 500px;
+  margin-top: -5px;
+  background: #00072F;
+  text-align: center;
+  line-height: 40px;
+  color: #555;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  letter-spacing: 6px;
+  transition: 5px;
+  overflow: hidden;
+  /* z-index: 1; */
+  border: none;
+  outline: inherit;
+  border-radius: 0 0 25px 25px;
+}
+#submit_button:hover{
+  color: #fff;
+  box-shadow: -15px 0 50px rgba(255, 20, 152, 1), 15px 0 50px rgba(122, 20, 255, 1) ;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.5),
+  0 0 35px rgba(255, 255, 255, 0.5);
+}
+
+.categories{
+  height: 50px;
+  width: 80px;
+  margin: 0 -5px -5px -5px;
+  -webkit-appearance: menulist-button;
+}
+
+.best_record{
+  text-align: center;
+}
+
+#category_input{
+  width: 100px;
+  height: 25px;
+}
+#name_input{
+  width: 100px;
+  height: 25px;
+}
+
+#addWord_button{
+  width: 50px;
+}
+
+#quantity{
+  width: 30px;
+  height: 45px;
+  margin-right: -5px;
+  margin-bottom: -5px;
+}

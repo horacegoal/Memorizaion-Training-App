@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/master.css">
+  <title>memory</title>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="memory_palace">
+      記憶宮殿
+      <button id="add">add</button>
+      <form class="memory_palace_input">
+        <span>1.</span><input type="text">
+        <span>2.</span><input type="text">
+        <span>3.</span><input type="text">
+        <span>4.</span><input type="text">
+        <span>5.</span><input type="text">
+        <span>6.</span><input type="text">
+        <span>7.</span><input type="text">
+        <span>8.</span><input type="text">
+        <span>9.</span><input type="text">
+        <span>10.</span><input type="text">
+      </form>
+    </div>
+    <button type="button" id="random_button">詞語</button>
+    <select class="categories">
+      <option>--</option>
+    </select>
+    <input type="number" id="quantity" value="1" min="1">
+    <button type="button" id="hide_button">隱藏</button>
+    <div class="record">
+      <div class="username">
+        <input type="text" placeholder="輸入你的名字" id="username">
+      </div>
+      <div class="timer_title">
+        <p>時間(秒)</p>
+        <hr>
+      </div>
+      <div class="timer">0</div>
+      <br>
+      <div class="accuracy">
+        <p>準確詞數</p>
+        <hr>
+        <div class="correct_number">0</div>
+      </div>
+      <br>
+      <div class="best_record">
+        <p>最佳記錄</p>
+        <hr>
+      </div>
+      <br>
+      <div class="add_words">
+        <p>添加詞語</p><hr>
+        <label>類別</label>
+        <input id="category_input">
+        <label>名字</label>
+        <input id="name_input">
+        <button id="addWord_button">確定</button>
+      </div>
+    </div>
+    <div class="words_and_answers">
+      <div class="random_word"></div>
+      <textarea name="answer_box" rows="8" cols="80" id="answer_box" disabled></textarea>
+    </div>
+    <button type="button" id="submit_button">submit</button>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+  <script src="js/libs/particles.min.js"></script>
+  <!-- <script type="text/javascript" src="./js/libs/rita-full.min.js"></script>
+  <script type="text/javascript" src="./js/libs/translate.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./js/libs/p5.min.js"></script> -->
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
