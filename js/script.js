@@ -119,7 +119,7 @@ function checkAnswer(){
     let answerArray = answer.split(/\s+/);
     for(let j = 0; j < answerArray.length; j++){
       for(let i = 0; i < randomWords.length; i++){
-        
+
         if(answerArray[j].toLowerCase() === randomWords[i].toLowerCase()){
           select(`#${randomWords[i]}`).style('color', 'white');
           numbersOfCorrect++;
@@ -202,9 +202,10 @@ function addWord(){
   }
   let deliveryMessage = select('#delivery_message');
 
-  // if(words[category][name]){
-  //   return deliveryMessage.html('該詞語已存在')
-  // }
+  if(words[category][0][name]){
+    return deliveryMessage.html('該詞語已存在')
+  }
+  
   deliveryMessage.html('傳送中');
   httpPost('https://memorization-data-api.herokuapp.com/add', data, function(res){
     deliveryMessage.html('傳送成功！');
