@@ -119,8 +119,9 @@ function checkAnswer(){
     let answerArray = answer.split(/\s+/);
     for(let j = 0; j < answerArray.length; j++){
       for(let i = 0; i < randomWords.length; i++){
-        if(answerArray[j] === randomWords[i]){
-          select(`#${answerArray[j]}`).style('color', 'white');
+        
+        if(answerArray[j].toLowerCase() === randomWords[i].toLowerCase()){
+          select(`#${randomWords[i]}`).style('color', 'white');
           numbersOfCorrect++;
         }
       }
