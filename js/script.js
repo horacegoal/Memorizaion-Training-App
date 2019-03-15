@@ -7,9 +7,10 @@ let words;
 function setup() {
   noCanvas();
   background(0)
-  httpGet('https://memorization-app-data-api.herokuapp.com/all', function(data){
+  httpGet('https://memorization-data-api.herokuapp.com/all', function(data){
       words = JSON.parse(data);
       let keys = Object.keys(words);
+
       let categoriesOptions = select('.categories');
       keys.forEach(function(category){
         categoriesOptions.option(category)
@@ -72,11 +73,11 @@ function randomWord() {
   randomWords = [];
     select('.random_word').html('')
     select('#answer_box').value('')
-    let selectValue = select('.categories').value();
     let quantity = select('#quantity').value();
     let category = select('.categories').value();
-    let items = Object.keys(words[category]);
+    let items = Object.keys(words[category][0]);
     let run;
+
     if(quantity <= items.length){
       run = true;
     }else{
@@ -86,7 +87,7 @@ function randomWord() {
     let checkList = {};
     while(run){
       let word;
-       let keys = Object.keys(words[selectValue]);
+       let keys = Object.keys(words[category][0]);
        word = random(keys);
        if(!checkList[word]){
         checkList[word] = true;
@@ -200,11 +201,11 @@ function addWord(){
   }
   let deliveryMessage = select('#delivery_message');
 
-  if(words[category][name]){
-    return deliveryMessage.html('該詞語已存在')
-  }
+  // if(words[category][name]){
+  //   return deliveryMessage.html('該詞語已存在')
+  // }
   deliveryMessage.html('傳送中');
-  httpPost('https://memorization-app-data-api.herokuapp.com/add', data, function(res){
+  httpPost('https://memorization-data-api.herokuapp.com/add', data, function(res){
     deliveryMessage.html('傳送成功！');
   }, function(err){
     console.log(err)
@@ -214,6 +215,6 @@ function adjustQuantityMax(){
   select('#quantity').value(1);
 
   let category = select('.categories').value();
-  let items = Object.keys(words[category]);
+  let items = Object.keys(words[category][0]);
   select('#quantity').attribute('max', items.length);
 }
