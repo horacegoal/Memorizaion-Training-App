@@ -1,5 +1,5 @@
 let button;
-let countries = ["美國", "加拿大", "百慕達", "波多黎各", "澳洲", "紐西蘭", "日本", "韓國", "新加坡", "臺灣", "香港", "以色列", "澳門", "安道爾", "奧地利", "比利時", "塞浦路斯", "捷克", "丹麥", "愛沙尼亞", "芬蘭", "法國", "德國", "冰島", "愛爾蘭", "意大利", "希臘", "拉脫維亞", "列支敦斯登", "立陶宛", "盧森堡", "馬耳他", "摩納哥", "荷蘭", "挪威", "葡萄牙", "聖馬利諾", "斯洛伐克", "斯洛文尼亞", "西班牙", "瑞典", "英國"]
+// let countries = ["美國", "加拿大", "百慕達", "波多黎各", "澳洲", "紐西蘭", "日本", "韓國", "新加坡", "臺灣", "香港", "以色列", "澳門", "安道爾", "奧地利", "比利時", "塞浦路斯", "捷克", "丹麥", "愛沙尼亞", "芬蘭", "法國", "德國", "冰島", "愛爾蘭", "意大利", "希臘", "拉脫維亞", "列支敦斯登", "立陶宛", "盧森堡", "馬耳他", "摩納哥", "荷蘭", "挪威", "葡萄牙", "聖馬利諾", "斯洛伐克", "斯洛文尼亞", "西班牙", "瑞典", "英國"]
 let count = 0;
 let db;
 let words;
@@ -194,7 +194,7 @@ function saveRecord() {
 }
 
 function addWord(){
-  let category = select('#category_input').value();
+  let category = select('#category_input').value().toLowerCase();
   let name = select('#name_input').value();
   let data = {
     category: category,
@@ -202,10 +202,13 @@ function addWord(){
   }
   let deliveryMessage = select('#delivery_message');
 
-  if(words[category][0][name]){
-    return deliveryMessage.html('該詞語已存在')
+  if(words[category]){
+    if(words[category][0][name]){
+      return deliveryMessage.html('該詞語已存在')
+    }
   }
-  
+
+
   deliveryMessage.html('傳送中');
   httpPost('https://memorization-data-api.herokuapp.com/add', data, function(res){
     deliveryMessage.html('傳送成功！');
